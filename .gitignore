@@ -1,2 +1,4 @@
 /cosign-gatekeeper-provider
 dist/*
+vendor/*
+.idea/*

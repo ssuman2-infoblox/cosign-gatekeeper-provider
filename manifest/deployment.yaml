@@ -19,9 +19,15 @@ spec:
         run: cosign-gatekeeper-provider
     spec:
       containers:
-      - image: devopps/cosign-gatekeeper-provider:latest
+      - image: devopps/cosign-gatekeeper-provider:v1.0.0-ib
         imagePullPolicy: IfNotPresent
         name: cosign-gatekeeper-provider
+        command:
+          - /cosign-gatekeeper-provider
+        args:
+          - "--port=8090"
+          - "--cert=/tls/cert.pem"
+          - "--key=/tls/key.pem"
         ports:
         - containerPort: 8090
           protocol: TCP
